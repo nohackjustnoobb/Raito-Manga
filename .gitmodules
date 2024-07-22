@@ -1,0 +1,9 @@
+[submodule "Raito-Web-Client"]
+	path = Raito-Web-Client
+	url = https://github.com/nohackjustnoobb/Raito-Web-Client
+[submodule "Raito-Server"]
+	path = Raito-Server
+	url = https://github.com/nohackjustnoobb/Raito-Server
+[submodule "Raito-Sync"]
+	path = Raito-Sync
+	url = https://github.com/nohackjustnoobb/Raito-Sync

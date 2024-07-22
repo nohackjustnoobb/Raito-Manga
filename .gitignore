@@ -53,3 +53,7 @@ Temporary Items
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode
+
+docker-compose.yml
+data
+config.json
