@@ -21,11 +21,15 @@ RUN go mod download
 
 RUN GOAMD64=v3 CGO_ENABLED=1 go build .
 
-FROM node:16 as web
+FROM node:20-alpine as web
 
 WORKDIR /app
 
 COPY ./Raito-Web-Client/ .
+
+RUN yarn config set network-timeout 300000
+RUN apk add g++ make py3-pip
+RUN yarn global add node-gyp
 RUN yarn install
 
 ENV SYNC_ADDRESS=/sync/ DEFAULT_SOURCE_ADDRESS=/api/
