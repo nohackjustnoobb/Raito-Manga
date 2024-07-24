@@ -10,12 +10,6 @@
     },
     // This is the settings for the api sub-server
     "api": {
-        "server": {
-            // Optional, the framework used for building the http server
-            // Available options: "crow", "drogon"
-            // Default: "drogon"
-            "framework": "drogon"
-        },
         // Optional, if it is set, the users will need the same key to access the server
         // default: ""
         "accessKey": "exampleKey",
