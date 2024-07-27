@@ -1,0 +1,67 @@
+// PLEASE REMOVE ALL COMMENTS FROM THE REAL CONFIGURATION FILE
+{
+    // This is the settings for the sync sub-server
+    "sync": {
+        // Optional, this secret key is used to sign the token. Please keep it secret.
+        // If not provided, it will be generated and written to the config file.
+        "secretKey": "secret",
+        // Optional, if this is set, user will be required to use this key to register new accounts
+        "registerKey": "registerKey"
+    },
+    // This is the settings for the api sub-server
+    "api": {
+        // Optional, if it is set, the users will need the same key to access the server
+        // default: ""
+        "accessKey": "exampleKey",
+        "driver": {
+            // Optional, the ids in the list will be excluded
+            "exclude": [],
+            // Optional, only the ids in the list will be included
+            // "include" have higher precedence than "exclude"
+            "include": [],
+            // Optional, only active drivers will use the proxy
+            "proxies": [],
+            // Optional, config that applied to specific driver
+            // the key will be the driver's id and the value will pass to the driver directly
+            "config": {
+                // Optional, the configuration of active drivers
+                "exampleActiveDriverID": {
+                    // Optional, the sql backend to use
+                    // Default: sqlite3
+                    "sql": "sqlite3",
+                    // Optional, the parameters of the sql backend
+                    // Default: ../data/{driverId}.sqlite3
+                    "parameters": "db=id.sqlite3"
+                }
+            },
+            // Optional, the server can also be used as a CMS which is fully independent
+            "CMS": {
+                // Optional, the main switch to turn on the CMS
+                // Default: false
+                "enabled": false,
+                // Optional, the id of the driver it must be unique
+                // Default: "SC"
+                "id": "SC",
+                // Optional, the access key for the admin interface
+                // Default: "" 
+                "accessKey": "exampleKey",
+                // Optional, Allow only the local ip address
+                // Default: true
+                "allowOnlyLocal": true,
+                // Optional, the sql backend to use
+                // Default: sqlite3
+                "sql": "sqlite3",
+                // Optional, the parameters of the sql backend
+                // Default: ../data/{id}.sqlite3
+                "parameters": "db=id.sqlite3"
+            }
+        },
+        "image": {
+            // Optional, proxy that only used when fetching images
+            "proxy": "sock5://example.com",
+            // Optional, set the interval for clearing image caches
+            // Valid units: "m"(minutes), "h"(hours), "d"(days)
+            "clearCaches": "1d"
+        }
+    }
+}

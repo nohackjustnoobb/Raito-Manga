@@ -1,57 +1,45 @@
 # Raito Manga
 
-Raito Manga is an open-source application aimed at simplifying the reading process. Check out our [demonstration](https://raitomanga.app).
-This application contains 3 components, including [Raito-Web-Client](https://github.com/nohackjustnoobb/Raito-Web-Client), [Raito-Server](https://github.com/nohackjustnoobb/Raito-Server), and [Raito-Sync](https://github.com/nohackjustnoobb/Raito-Sync).
+Raito Manga is an open-source application providing a lightweight alternative to other applications. Check out our [demonstration](https://raitomanga.app).
+This application contains 3 components, including [Raito-Web-Client](https://github.com/nohackjustnoobb/Raito-Web-Client), [Raito-Server](https://github.com/nohackjustnoobb/Raito-Server), and [Raito-Sync](https://github.com/nohackjustnoobb/Raito-Sync). There is also one optional component, [Raito-Admin-Panel](https://github.com/nohackjustnoobb/Raito-Admin-Panel).
 
 ### Raito Web Client
 
-This is the front-end of the application, written in Typescript and React. It can be built as static files. Check its repository for more information.
+Raito Web Client is the front-end component of the application, developed using Typescript and React. It can be built into static files. For more details, refer to its [repository](https://github.com/nohackjustnoobb/Raito-Web-Client).
 
 ### Raito Server
 
-This server is used to fetch the manga from different sources. The server is written in different languages, and the web client is able to use multiple servers at the same time. Therefore, you can set up your own server but use our sync server and webpage. Check its repository for more information.
-
-#### Driver
-
-The driver is responsible for handling how the data is fetched. Each source has its own driver. There are two types of drivers: passive and active. A passive driver fetches data only when the client is requesting it. Active drivers fetch data regardless of client requests. You can write your driver by extending the `BaseDriver` or `ActiveDriver` classes. Check out the provided driver as an example. Feel free to create a pull request.
+Raito Server is responsible for fetching manga from various sources. The web client can interact with multiple servers simultaneously, allowing you to set up your own server while using our sync server and webpage. For more details, refer to its [repository](https://github.com/nohackjustnoobb/Raito-Server).
 
 ### Raito Sync
 
-This server is used to sync the data between devices. It is written in Golang and uses SQLite to store the data. Check its repository for more information.
+Raito Sync is a server designed to synchronize data across devices. It is built using Golang and stores data in SQLite. For more details, refer to its [repository](https://github.com/nohackjustnoobb/Raito-Sync).
+
+### Raito Admin Panel
+
+Raito Admin Panel is the front-end for the admin interface, developed using Typescript and Svelte. If the CMS feature is enabled on the server, this panel is required to access the interface. For more details, refer to its [repository](https://github.com/nohackjustnoobb/Raito-Admin-Panel).
 
 ## Quick Start
 
-The front-end webpage should be built separately and served by a web server like Nginx. Check the repository for more information.
+_There is an all-in-one Docker image that bundles both the front-end and back-end components. This image internally launches the two backend servers and uses Nginx to reverse proxy incoming requests to the appropriate server. For optimal performance, consider setting up the servers separately._
 
-The servers can be set up easily by using `docker-compose`.
-
-1. Create the configuration file for both servers. The template file of server can be found in the corresponding repository,
+1. Create the configuration based on the `config_template.json`. The minimal configuration is a single file named 'config.json', which can be created with `touch config.json`.
 
 2. Create a `docker-compose.yml` file like this:
 
 ```yml
-version: "3.7"
+version: "3"
 
 services:
-  raito-sync:
-    image: nohackjustnoobb/raito-sync
-    container_name: raito-sync
+  raito-manga:
+    image: nohackjustnoobb/raito-manga
+    container_name: raito-manga
     restart: unless-stopped
     ports:
-      - 3080:3000
+      - 8080:80
     volumes:
-      - ./db.sqlite3:/app/db.sqlite3
-      - ./sync_config.json:/app/config.json:ro
-
-  raito-server:
-    # Check https://github.com/nohackjustnoobb/Raito-Server for different images.
-    image: nohackjustnoobb/raito-server-cpp
-    container_name: raito-server
-    restart: unless-stopped
-    ports:
-      - 3081:8000
-    volumes:
-      - ./server_config.json:/app/config.json:ro
+      - ./data:/data
+      - ./config.json:/config.json
 ```
 
 3. Create the container
@@ -59,3 +47,7 @@ services:
 ```bash
 sudo docker-compose up -d
 ```
+
+## Disclaimer
+
+This software is developed solely for educational and demonstration purposes. It is intended to be used as a learning tool and to showcase the capabilities of the application. Any use of this software for purposes other than education and demonstration is not endorsed or supported by the developers.
