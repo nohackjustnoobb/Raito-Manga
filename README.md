@@ -1,23 +1,23 @@
 # Raito Manga
 
-Raito Manga is an open-source application aimed at simplifying the reading process. Check out our [demonstration](https://raitomanga.app).
+Raito Manga is an open-source application providing a lightweight alternative to other applications. Check out our [demonstration](https://raitomanga.app).
 This application contains 3 components, including [Raito-Web-Client](https://github.com/nohackjustnoobb/Raito-Web-Client), [Raito-Server](https://github.com/nohackjustnoobb/Raito-Server), and [Raito-Sync](https://github.com/nohackjustnoobb/Raito-Sync). There is also one optional component, [Raito-Admin-Panel](https://github.com/nohackjustnoobb/Raito-Admin-Panel).
 
 ### Raito Web Client
 
-Raito Web Client is the front-end component of the application, developed using Typescript and React. It can be built into static files. For more details, refer to its repository.
+Raito Web Client is the front-end component of the application, developed using Typescript and React. It can be built into static files. For more details, refer to its [repository](https://github.com/nohackjustnoobb/Raito-Web-Client).
 
 ### Raito Server
 
-Raito Server is responsible for fetching manga from various sources. The web client can interact with multiple servers simultaneously, allowing you to set up your own server while using our sync server and webpage. For more details, refer to its repository.
+Raito Server is responsible for fetching manga from various sources. The web client can interact with multiple servers simultaneously, allowing you to set up your own server while using our sync server and webpage. For more details, refer to its [repository](https://github.com/nohackjustnoobb/Raito-Server).
 
 ### Raito Sync
 
-Raito Sync is a server designed to synchronize data across devices. It is built using Golang and stores data in SQLite. For more details, refer to its repository.
+Raito Sync is a server designed to synchronize data across devices. It is built using Golang and stores data in SQLite. For more details, refer to its [repository](https://github.com/nohackjustnoobb/Raito-Sync).
 
 ### Raito Admin Panel
 
-Raito Admin Panel is the front-end for the admin interface, developed using Typescript and Svelte. If the CMS feature is enabled on the server, this panel is required to access the interface. For more details, refer to its repository.
+Raito Admin Panel is the front-end for the admin interface, developed using Typescript and Svelte. If the CMS feature is enabled on the server, this panel is required to access the interface. For more details, refer to its [repository](https://github.com/nohackjustnoobb/Raito-Admin-Panel).
 
 ## Quick Start
 
@@ -47,3 +47,7 @@ services:
 ```bash
 sudo docker-compose up -d
 ```
+
+## Disclaimer
+
+This software is developed solely for educational and demonstration purposes. It is intended to be used as a learning tool and to showcase the capabilities of the application. Any use of this software for purposes other than education and demonstration is not endorsed or supported by the developers.
