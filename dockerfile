@@ -28,7 +28,7 @@ WORKDIR /app
 COPY ./Raito-Web-Client/ .
 
 RUN yarn config set network-timeout 300000
-RUN apk add g++ make py3-pip
+RUN apk add g++ make py3-pip git
 RUN yarn global add node-gyp
 RUN yarn install
 
