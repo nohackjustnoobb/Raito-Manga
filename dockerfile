@@ -1,4 +1,4 @@
-FROM python:3.9-bookworm as api
+FROM python:3.9-bookworm AS api
 
 WORKDIR /app
 COPY ./Raito-Server/conanfile.py ./Raito-Server/CMakeLists.txt ./
@@ -12,7 +12,7 @@ RUN conan install . --output-folder=build --build=missing
 COPY ./Raito-Server/src src/
 RUN cd /app/build && cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release && make
 
-FROM golang:1-bookworm as sync
+FROM golang:1-bookworm AS sync
 
 WORKDIR /app
 
@@ -21,7 +21,7 @@ RUN go mod download
 
 RUN GOAMD64=v3 CGO_ENABLED=1 go build .
 
-FROM node:20-alpine as web
+FROM node:20-alpine AS web
 
 WORKDIR /app
 
