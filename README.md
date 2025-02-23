@@ -1,8 +1,17 @@
+<div align="center">
+
 # Raito Manga
 
-[![Nightly Build](https://github.com/nohackjustnoobb/Raito-Manga/actions/workflows/Nightly%20Build.yml/badge.svg)](https://github.com/nohackjustnoobb/Raito-Manga/actions/workflows/Nightly%20Build.yml)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/nohackjustnoobb/Raito-Manga/Nightly%20Build.yml?style=for-the-badge&label=Nightly%20Build)](https://github.com/nohackjustnoobb/Raito-Manga/actions/workflows/Nightly%20Build.yml)
+[![GitHub License](https://img.shields.io/github/license/nohackjustnoobb/Raito-Manga?style=for-the-badge)](https://github.com/nohackjustnoobb/Raito-Manga/blob/master/LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/nohackjustnoobb/raito-manga?style=for-the-badge)](https://hub.docker.com/repository/docker/nohackjustnoobb/raito-manga)
 
-Raito Manga is an open-source application providing a lightweight alternative to other applications. Check out our [demonstration](https://raitomanga.app).
+</div>
+
+![preview](./preview.png)
+
+Raito Manga is an open-source, cross-platform application that offers a lightweight and efficient solution for managing and reading manga. It features seamless syncing, multi-language support, and an extensible framework, enabling users to easily organize, explore, and enjoy their manga with optimized performance and intuitive navigation. Discover more through our [live demonstration](https://raitomanga.app).
+
 This application contains 3 components, including [Raito-Web-Client](https://github.com/nohackjustnoobb/Raito-Web-Client), [Raito-Server](https://github.com/nohackjustnoobb/Raito-Server), and [Raito-Sync](https://github.com/nohackjustnoobb/Raito-Sync). There is also one optional component, [Raito-Admin-Panel](https://github.com/nohackjustnoobb/Raito-Admin-Panel).
 
 ### Raito Web Client
