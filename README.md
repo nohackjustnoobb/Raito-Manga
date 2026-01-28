@@ -10,7 +10,7 @@
 
 ![preview](./preview.png)
 
-Raito Manga is an open-source, cross-platform application that offers a lightweight and efficient solution for managing and reading manga. It features seamless syncing, multi-language support, and an extensible framework, enabling users to easily organize, explore, and enjoy their manga with optimized performance and intuitive navigation. Discover more through our [live demonstration](https://raitomanga.app).
+Raito Manga is an open-source, cross-platform application that offers a lightweight and efficient solution for managing and reading manga. It features seamless syncing, multi-language support, and an extensible framework, enabling users to easily organize, explore, and enjoy their manga with optimized performance and intuitive navigation.
 
 This application contains 3 components, including [Raito-Web-Client](https://github.com/nohackjustnoobb/Raito-Web-Client), [Raito-Server](https://github.com/nohackjustnoobb/Raito-Server), and [Raito-Sync](https://github.com/nohackjustnoobb/Raito-Sync). There is also one optional component, [Raito-Admin-Panel](https://github.com/nohackjustnoobb/Raito-Admin-Panel).
 
